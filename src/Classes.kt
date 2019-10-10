@@ -1,9 +1,4 @@
-class Person(val id: Int, var name: String, var phone: String) {
-
-    override fun toString(): String {
-        return "Person(id=$id, name=$name, phone=$phone)";
-    }
-}
+data class Person(val id: Int, var name: String, var phone: String)
 
 class Customer {
     private var id: Int;
@@ -48,9 +43,12 @@ class Customer {
     }
 }
 
+object Singleton;
+
 fun main() {
     val kbs = Person(1, "kbs", "010-0000-0000");
     val lee = Person(name = "lee", id = 2, phone = "010-1111-1111");
+
     println(kbs);
     println(lee);
 
@@ -59,4 +57,10 @@ fun main() {
     customer.setPhone("010-9999-9999");
     println(customer);
 
+    val singleton1 = Singleton;
+    val singleton2 = Singleton;
+
+    println(singleton1);
+    println(singleton2);
+    println(singleton1 == singleton2);
 }
